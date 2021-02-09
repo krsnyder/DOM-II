@@ -3,23 +3,44 @@
 //   alert("Hello! Lots of fun stuff here, don't get too excited by all the changing colors!")
 // })
 
-// Scrolling through an array of classes for the background colors
+// Toggle images
 
 let click = document.getElementById('click');
-let bodyColor = document.querySelector('body');
-let colors = ['black', 'blue', 'red', 'green', 'white']
+let pic = document.getElementsByTagName('img');
+let pics = Array.prototype.slice.call(pic);
+
 click.addEventListener('click', () => {
-  let index = colors.indexOf(bodyColor.classList[0]);
-  if (index == 4) {
-    bodyColor.classList.remove('white');
-    bodyColor.classList.add('black');
+  for (let i = 0; i < pics.length; i++){
+    pics[i].classList.toggle('off')
+  }
+  if (click.textContent == "Hide Images") {
+    click.textContent = "Show Images"
   } else {
-    bodyColor.classList.remove(colors[index]);
-    bodyColor.classList.add(colors[index+1]);
+    click.textContent = "Hide Images"
   }
 })
 
+
+
+
+
+// Scrolling through an array of classes for the background colors
+
+// let bodyColor = document.querySelector('body');
+// let colors = ['black', 'blue', 'red', 'green', 'white']
+// bodyColor.addEventListener('click', () => {
+//   let index = colors.indexOf(bodyColor.classList[0]);
+//   if (index == 4) {
+//     bodyColor.classList.remove('white');
+//     bodyColor.classList.add('black');
+//   } else {
+//     bodyColor.classList.remove(colors[index]);
+//     bodyColor.classList.add(colors[index+1]);
+//   }
+// })
+
 // Scroll event
+
 // window.addEventListener('scroll', () => {
 //   const scrollable = document.documentElement.scrollHeight - window.innerHeight;
 //   const scrolled = window.scrollY;
@@ -31,13 +52,11 @@ click.addEventListener('click', () => {
 
 
 // Balloon pop
-const balloon = document.getElementById('balloon');
-const pop = document.getElementById('pop');
-balloon.addEventListener("mouseover", () => {
-  alert("You popped my balloon!")
-  balloon.classList.add("off")
-  pop.classList.remove("off")
-})
 
-
-
+// const balloon = document.getElementById('balloon');
+// const pop = document.getElementById('pop');
+// balloon.addEventListener("mouseover", () => {
+//   alert("You popped my balloon!")
+//   balloon.classList.add("off")
+//   pop.classList.remove("off")
+// })

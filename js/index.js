@@ -11,3 +11,7 @@ bodyColor.addEventListener('click', () => {
     bodyColor.classList.add(colors[index+1]);
   }
 })
+
+window.addEventListener('load', () => {
+  alert("Hello! Lots of fun stuff here, don't get too excited by all the changing colors!")
+})

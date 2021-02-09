@@ -59,19 +59,22 @@ balloon.addEventListener("mouseover", () => {
 
 // Prevent Reload
 
-// const anchor = document.getElementById('anchor');
-// anchor.addEventListener('click', (e) => {
-//   e.preventDefault()
-// })
+const anchors = document.getElementsByClassName('nav-link');
+
+Array.from(anchors).forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    e.stopPropagation();
+    e.preventDefault();
+  })
+})
 
 // Form
 
-let form = document.getElementById('form')
+let form = document.getElementById('form');
+
 form.addEventListener('click', e => {
   e.stopPropagation();
 })
-
-// const password = document.querySelector('input[type="password"]');
 
 form.addEventListener('focus', (e) => {
   e.target.style.background = 'gray';
